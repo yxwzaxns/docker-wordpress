@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 MAINTAINER John Fink <yxwzaxns@gmail.com>
+RUN groupadd user && useradd --create-home --home-dir /home/user -g user user
 RUN apt-get update # Fri Oct 24 13:09:23 EDT 2014
 RUN apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql  php5-ldap

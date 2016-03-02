@@ -18,7 +18,7 @@ ENV WP_SOURCE /var/www
 ENV WP_CONTENT /var/www/vo
 
 
-//RUN mkdir -p "$WP_CONTENT" && chown -R www-data:www-data "$WP_CONTENT"
+
 
 VOLUME $WP_CONTENT
 EXPOSE 80

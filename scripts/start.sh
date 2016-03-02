@@ -10,12 +10,12 @@ set -e
 		fi
 	done
 
-	if [ ! -e "$WP_CONTENT/wp-config.php" ]; then
+	# if [ ! -e "$WP_CONTENT/wp-config.php" ]; then
     cp "$WP_SOURCE/wp-config-sample.php" "$WP_CONTENT/wp-config.php"
-	fi
+	# fi
 
 	ln -sf "$WP_CONTENT/wp-config.php" "$WP_SOURCE/wp-config.php"
-
+  echo "define( 'WP_CONTENT_DIR', $WP_CONTENT );" >> "$WP_CONTENT/wp-config.php"
 	chown -R user "$WP_CONTENT"
 
 	set -- gosu user "$@"

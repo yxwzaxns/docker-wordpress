@@ -14,9 +14,12 @@ RUN chown -R www-data:www-data /var/www/
 RUN chmod 755 /start.sh
 
 ENV WP_SOURCE /var/www
-ENV WP_CONTENT /var/www/wp-content
 
-RUN mkdir -p "$WP_CONTENT" && chown -R user:user "$WP_CONTENT"
+ENV WP_CONTENT /var/www/vo
+
+
+//RUN mkdir -p "$WP_CONTENT" && chown -R www-data:www-data "$WP_CONTENT"
+
 VOLUME $WP_CONTENT
 EXPOSE 80
 CMD ["/bin/bash", "/start.sh"]

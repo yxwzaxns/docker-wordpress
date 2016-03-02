@@ -15,8 +15,8 @@ set -e
 	fi
 
 	ln -sf "$WP_CONTENT/wp-config.php" "$WP_SOURCE/wp-config.php"
-  sed -i '20a define( "WP_CONTENT_DIR", dirname(__FILE__)."/wp-content" );' "$WP_CONTENT/wp-config.php"
-	chown -R user "$WP_CONTENT"
+  # sed -i '20a define( "WP_CONTENT_DIR", "/wp-content" );' "$WP_CONTENT/wp-config.php"
+	# chown -R user "$WP_CONTENT"
 
 	set -- gosu user "$@"
 # fi

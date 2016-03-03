@@ -12,8 +12,7 @@ set -e
 
 	if [ ! -e "$VOLUME/wp-config.php" ]; then
     cp "$WP_SOURCE/wp-config-sample.php" "$VOLUME/wp-config.php"
-    mkdir "$VOLUME/wp-content"
-    mv /var/www/wp-content /var/www/volume/wp-content
+    mv /var/www/wp-content /var/www/volume
     sed -i '20a define( "VOLUME_DIR", dirname(__FILE__)."/VOLUME/wp-content" );' "$VOLUME/wp-config.php"
   fi
 

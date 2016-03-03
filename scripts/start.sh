@@ -13,7 +13,8 @@ set -e
 	if [ ! -e "$VALUME/wp-config.php" ]; then
     cp "$WP_SOURCE/wp-config-sample.php" "$VALUME/wp-config.php"
     ln -sf "$VALUME/wp-config.php" "$WP_SOURCE/wp-config.php"
-    mkdir "$VALUME/wp-content" && mv "$WP_SOURCE/wp-content/*" "$WP_CONTENT"
+    mkdir "$VALUME/wp-content"
+    mv "$WP_SOURCE/wp-content/*" "$WP_CONTENT"
     sed -i '20a define( "VALUME_DIR", dirname(__FILE__)."/valume/wp-content" );' "$VALUME/wp-config.php"
     chown -R user "$VALUME"
   fi

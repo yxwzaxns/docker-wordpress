@@ -13,7 +13,7 @@ set -e
 	if [ ! -e "$VOLUME/wp-config.php" ]; then
     cp "$WP_SOURCE/wp-config-sample.php" "$VOLUME/wp-config.php"
     mv /var/www/wp-content /var/www/volume
-    sed -i '20a define( "VOLUME_DIR", dirname(__FILE__)."/VOLUME/wp-content" );' "$VOLUME/wp-config.php"
+    sed -i '20a define( "WP_CONTENT_DIR", dirname(__FILE__)."/volume/wp-content" );' "$VOLUME/wp-config.php"
   fi
 
   ln -sf "$VOLUME/wp-config.php" "$WP_SOURCE/wp-config.php"

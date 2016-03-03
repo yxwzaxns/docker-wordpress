@@ -15,11 +15,10 @@ RUN chmod 755 /start.sh
 
 ENV WP_SOURCE /var/www
 
-ENV WP_CONTENT /var/www/vo
+ENV WP_CONTENT /var/www/valume/wp-content
 
+ENV VALUME /var/www/valume
 
-
-
-VOLUME $WP_CONTENT
+VOLUME $VALUME
 EXPOSE 80
 CMD ["/bin/bash", "/start.sh"]
